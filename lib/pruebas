@@ -1,0 +1,7 @@
+UserAccountsDrawerHeader(
+              accountName: Text("Sujeto de prueba"),
+              accountEmail: Text("sujetodp@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.blue,
+                  child: Text("sdp", style: TextStyle(fontSize: 30.0))),
+            ),
