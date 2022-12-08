@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'addFoto.dart';
+import 'addIng.dart';
+import 'addNotes.dart';
+import 'addSteps.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -12,6 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(title: Center(child: Text("Recetas"))),
             body: Stepper(
                 currentStep: _currentStep,
                 onStepContinue: () {
@@ -27,30 +33,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
                 steps: [
-          Step(
-              title: Text("Introduzca foto"),
-              content: SizedBox(
-                width: 110,
-                height: 110,
-              )),
-          Step(
-              title: Text("Introduzca Ingredientes"),
-              content: SizedBox(
-                width: 110,
-                height: 110,
-              )),
-          Step(
-              title: Text("Introduzca Pasos"),
-              content: SizedBox(
-                width: 110,
-                height: 110,
-              )),
-          Step(
-              title: Text("Notas"),
-              content: SizedBox(
-                width: 110,
-                height: 110,
-              )),
-        ])));
+                  Step(title: Text("Introduzca foto"), content: addFoto()),
+                  Step(
+                      title: Text("Introduzca Ingredientes"),
+                      content: addIng()),
+                  Step(title: Text("Introduzca Pasos"), content: addSteps()),
+                  Step(title: Text("Notas"), content: addNotes()),
+                ])));
   }
 }

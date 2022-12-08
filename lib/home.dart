@@ -1,8 +1,8 @@
-import 'package:prueba/Screens/Configuraciones.dart';
-import 'package:prueba/Screens/Recetas.dart';
-import 'package:prueba/Screens/addRecetas.dart';
+import 'package:prueba/Screens/lista_de_nombres.dart';
+
 import 'Screens/Configuraciones.dart';
 import 'package:flutter/material.dart';
+import 'Screens/Recetas.dart';
 import 'Screens/addRecetas.dart';
 
 class HOME extends StatefulWidget {
@@ -36,7 +36,7 @@ class _HOMEState extends State<HOME> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Recipify")),
+      appBar: AppBar(title: Center(child: Text("Recipify"))),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -45,13 +45,6 @@ class _HOMEState extends State<HOME> {
                   _onSelect(2);
                 },
                 child: Icon(Icons.add)),
-            UserAccountsDrawerHeader(
-              accountName: Text("Sujeto de prueba"),
-              accountEmail: Text("sujetodp@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                  backgroundColor: Color.fromARGB(255, 105, 86, 35),
-                  child: Text("sdp", style: TextStyle(fontSize: 30.0))),
-            ),
             ListTile(
               title: Text("Recetas"),
               leading: Icon(Icons.book),

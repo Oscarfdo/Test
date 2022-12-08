@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
-import 'package:prueba/home.dart';
+import 'package:prueba/Screens/Recetas.dart';
+import 'Screens/lista_de_nombres.dart';
+import 'home.dart';
 
 void main() => runApp(Aplication());
 
@@ -11,9 +13,10 @@ class Aplication extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Pantalla Principal",
-      home: HOME(),
+      home: ListaDeNombreScreen(),
       theme: ThemeData(
-          primaryColor: Color(0xFF47FFFC), accentColor: Color(0xFFFF47EB)),
+          primaryColor: Color(0xFF47FFFC),
+          accentColor: Color.fromARGB(255, 181, 128, 14)),
     );
   }
 }
