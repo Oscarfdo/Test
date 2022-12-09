@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
+// ignore: must_be_immutable
 class LongitudDelista extends StatelessWidget {
   LongitudDelista(this.longitud, {this.colorNegro = true, Key? key})
       : super(key: key);

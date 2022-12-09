@@ -1,7 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:prueba/Screens/addRecetas.dart';
-
-import 'lista_de_nombres.dart';
 
 class Recetas extends StatelessWidget {
   const Recetas({Key? key}) : super(key: key);

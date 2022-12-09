@@ -1,17 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:prueba/Screens/studen.dart';
 
 import 'Configuraciones.dart';
-import 'Recetas.dart';
 import 'addRecetas.dart';
 import 'mensaje.dart';
 
 String valor = "";
 
 class ListaDeNombreScreen extends StatefulWidget {
-  ListaDeNombreScreen([Key? key]) : super(key: key);
+  const ListaDeNombreScreen([Key? key]) : super(key: key);
 
   @override
   State<ListaDeNombreScreen> createState() => _ListaDeNombreScreenState();
@@ -19,17 +17,6 @@ class ListaDeNombreScreen extends StatefulWidget {
 
 class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
   int _select = 0;
-
-  _navegador(int pos) {
-    switch (pos) {
-      case 0:
-        return Recetas();
-      case 1:
-        return Configuraciones();
-      case 2:
-        return MyHomePage();
-    }
-  }
 
   _onSelect(int pos) {
     Navigator.of(context).pop();
@@ -51,25 +38,30 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
   Widget build(BuildContext context) {
     listaDeNombres.sort();
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Recipify"))),
+      appBar: AppBar(
+        title: const Center(child: Text("Recipify")),
+        backgroundColor: Color(0XFF506D2F),
+      ),
+      backgroundColor: Color(0xffF3EBDD),
       drawer: Drawer(
+        backgroundColor: Color(0xffF3EBDD),
         child: ListView(
           children: <Widget>[
             ListTile(
-              title: Text("Recetas"),
-              leading: Icon(Icons.book),
+              title: const Text("Recetas"),
+              leading: const Icon(Icons.book),
               selected: (0 == _select),
               onTap: () {
                 _onSelect(0);
               },
             ),
             ListTile(
-              title: Text("Configuraciones"),
-              leading: Icon(Icons.build_circle),
+              title: const Text("Configuraciones"),
+              leading: const Icon(Icons.build_circle),
               selected: (1 == _select),
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Configuraciones(),
+                  builder: (context) => const Configuraciones(),
                 ));
               },
             )
@@ -79,7 +71,7 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
       body: Column(
         children: [
           Row(
-            children: [],
+            children: const [],
           ),
           Expanded(
             child: ListView(
@@ -95,9 +87,9 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
                                   color: Colors.grey.withOpacity(0.5),
                                   spreadRadius: 5,
                                   blurRadius: 7,
-                                  offset: Offset(0, 3))
+                                  offset: const Offset(0, 3))
                             ],
-                            color: Colors.lightGreen,
+                            color: Color(0XFF7D5642),
                             borderRadius: BorderRadius.circular(10)),
                         padding: const EdgeInsets.all(20),
                         //color: Colors.lightBlue,
@@ -105,6 +97,7 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
                           leading:
                               SizedBox(child: Image.asset('assets/Pozole.jpg')),
                           trailing: IconButton(
+                              color: Color(0XFFF3EBDD),
                               onPressed: () {
                                 setState(() {
                                   listaDeNombres.remove(nombre);
@@ -114,6 +107,7 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
                                     ),
                                     action: SnackBarAction(
                                       label: 'Undo',
+                                      textColor: Color(0XFFF3EBDD),
                                       onPressed: () {
                                         // Some code to undo the change.
                                         setState(() {
@@ -147,11 +141,14 @@ class _ListaDeNombreScreenState extends State<ListaDeNombreScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => MyHomePage(),
+            builder: (context) => const MyHomePage(),
           ));
         },
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(
+          Icons.add,
+          color: Color(0XFFF3EBDD),
+        ),
       ),
     );
   }

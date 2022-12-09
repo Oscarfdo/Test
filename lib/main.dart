@@ -3,7 +3,7 @@ import 'package:prueba/Screens/Recetas.dart';
 import 'Screens/lista_de_nombres.dart';
 import 'home.dart';
 
-void main() => runApp(Aplication());
+void main() => runApp(const Aplication());
 
 class Aplication extends StatelessWidget {
   const Aplication({Key? key}) : super(key: key);
@@ -15,8 +15,9 @@ class Aplication extends StatelessWidget {
       title: "Pantalla Principal",
       home: ListaDeNombreScreen(),
       theme: ThemeData(
-          primaryColor: Color(0xFF47FFFC),
-          accentColor: Color.fromARGB(255, 181, 128, 14)),
+          primaryColor: const Color(0xFF506D2F),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(secondary: const Color(0XFF2A2922))),
     );
   }
 }

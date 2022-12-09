@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 class Configuraciones extends StatelessWidget {
@@ -6,7 +8,7 @@ class Configuraciones extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text("Configuraciones"))),
+      appBar: AppBar(title: const Center(child: Text("Configuraciones"))),
     );
   }
 }
